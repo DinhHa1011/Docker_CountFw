@@ -1,0 +1,15 @@
+{
+  "name": "cron-node-app",
+  "version": "1.0.0",
+  "description": "Node.js app with cron job",
+  "type": "module",
+  "main": "app.js",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.55.0",
+    "node-fetch": "^3.0.0",
+    "mysql": "^2.18.1"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
