@@ -13,8 +13,8 @@ function executeTask() {
     ///} from "node-fetch";
 
     var testmode = 1;
-    var bot_token = "6542277150:AAE-d8eiLo8KFcsyE_L4zMQRn0fV3DQ39gQ";
-    var chat_id = "-914175664";
+    var bot_token = "";
+    var chat_id = "";
 
     var con = mysql.createConnection({
         host: "master",
@@ -26,7 +26,7 @@ function executeTask() {
     // Header Graylog API
     var myHeaders = new Headers();
     myHeaders.append("Accept", "application/json");
-    myHeaders.append("Authorization", "Basic bW9uaXRvcjptT0pnMmVTOXhwREZ6SVVo");
+    myHeaders.append("Authorization", "");
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
