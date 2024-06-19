@@ -1,0 +1,28 @@
+version: '3'                                                                                                                                                                           buffers version: '3'
+#networks:
+#  default:
+#    ipam:
+#      driver: default
+#      config:
+ #       - subnet: 192..137.0/24
+services:
+  master:
+    image: mariadb:10.6.4-focal
+    environment:
+      - "MYSQL_ROOT_PASSWORD=test"
+      - "ALLOW_EMPTY_PASSWORD=yes"
+      - "MYSQL_DATABASE=count"
+    volumes:
+      - "./sample:/docker-entrypoint-initdb.d"
+    networks:
+      - default
+
+  node_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - master
+    restart: on-failure
+    networks:
+      - default
